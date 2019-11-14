@@ -17,16 +17,21 @@
 
         <script type="text/javascript">
             
+            // Some test calls to generate a few passwords. I'll comment this out once I complete the html and css.
             alert(GeneratePassword(8,true,false,false,false));
             alert(GeneratePassword(8,true,true,false,false));
             alert(GeneratePassword(8,true,true,true,false));
             alert(GeneratePassword(8,true,true,true,true));
             alert(GeneratePassword(8,false,false,false,false));
+            
+            // Generates a random number between iMin and iMax (inclusive)
             function GetRandomInt(iMin, iMax){
                 var iRandom =Math.floor(Math.random() * (iMax - iMin + 1) ) + iMin;
                 console.log("GetRandomInt generated: " + iRandom);
                 return iRandom;
             }
+
+            // Generates a password per input parameters
             function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNumber,bIncludeSpecial){
                 var sPswd="";
                 var charType =[];
@@ -56,17 +61,17 @@
                                 sPswd+=String.fromCharCode(GetRandomInt(48,57));
                             break;
                             case "Special":
-                                // Special chars don't have sequential ascii codes so it's easier to store them in an array
+                                // The ascii codes for the Special chars are not sequential, so it's easier to store them in an array
                                 sPswd+=specialChars[GetRandomInt(0,specialChars.length-1)];
                             break;
                             default:
-                            console.log("Invalid char type:" + sType);
+                            console.log("Error: Invalid char type:" + sType);
                             
                         }
                     }
                 }
                 else{
-                    console.log("Error: not char type was selected.");
+                    console.log("Error: no char type was selected.");
                 }
                 console.log ("Generated password:" + sPswd);
                 return sPswd;
