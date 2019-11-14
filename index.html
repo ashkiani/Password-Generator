@@ -43,7 +43,7 @@
                 if (bIncludeSpecial)  {charType.push("Special");}
                 if (charType.length>0){
                     var specialChars=["~","`","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","[","}","]","|",":",";","<",",",">",".","?","/","\'","\"","\\"];
-                    for (var i=0;i<pswLength;i++){
+                    for (var i=0;i<iPasswordLength;i++){
                         var iType= GetRandomInt(0,charType.length-1);
                         var sType=charType[iType];
                         console.log("Selected type char #" + i + ": " + sType);
