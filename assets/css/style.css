@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
 }
-.container{
+.container,footer{
   background-color: teal;
+}
+footer,header{
+  text-align: center;
+}
+.btn-outline-secondary{
+  background-color: #007bff;
+  color: white;
 }

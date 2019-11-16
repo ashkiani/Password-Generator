@@ -10,13 +10,19 @@
     </head>
     <body>
         <header>
-               
+                <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                          <h1 class="display-4 mx-auto">Password Generator</h1>
+                          <p class="lead"></p>
+                        </div>
+                      </div>
+               <h1></h1>
         </header>
-        <!-- w-75 -->
+        
         <div class="container ">
 
                 <form>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 pt-3">
                         <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">Copy</button>
@@ -25,93 +31,45 @@
                     </div>
                     <div class="input-group mb-3">
                             
-                            <label for="example-number-input" class="col-1 col-form-label">Number</label>
+                            <label for="example-number-input" class="col-md-auto col-form-label">Password Length:</label>
                             <input class="form-control" type="number" value="8" id="example-number-input">
                         </div>
                     
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Check1">
-                        <label class="form-check-label" for="Check1">
-                            Lower
+                        <input class="form-check-input" type="checkbox" value="" id="chkLower">
+                        <label class="form-check-label" for="chkLower">
+                            Include Lowercase Characters
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Check1">
-                        <label class="form-check-label" for="Check1">
-                            Upper
+                        <input class="form-check-input" type="checkbox" value="" id="chkUpper">
+                        <label class="form-check-label" for="chkUpper">
+                            Include Uppercase Characters
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Check1">
-                        <label class="form-check-label" for="Check1">
-                            Numbers
+                        <input class="form-check-input" type="checkbox" value="" id="chkNumbers">
+                        <label class="form-check-label" for="chkNumbers">
+                            Include Numbers
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="Check1">
-                        <label class="form-check-label" for="Check1">
-                            Special characters
+                        <input class="form-check-input" type="checkbox" value="" id="chkSpecial">
+                        <label class="form-check-label" for="chkSpecial">
+                            Include Special characters
                         </label>
                     </div>
                     <button type="submit" class="btn btn-primary mb-3">Generate</button>
 
                 </form>
 
-
-            <!-- <form>
-                    <label for="validationDefaultUsername">Username</label>
-                    <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    </div>
-                    <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
-                    </div>
-
-
-                <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault01">First name</label>
-                    <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault02">Last name</label>
-                    <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                    
-                </div>
-                </div>
-                <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">City</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="validationDefault04">State</label>
-                    <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="validationDefault05">Zip</label>
-                    <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                    <label class="form-check-label" for="invalidCheck2">
-                    Agree to terms and conditions
-                    </label>
-                </div>
-                </div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </form> -->
-
-
         </div>
 
     
+        <div class="fixed-bottom">
+            <footer>copyright</footer>
+        </div>
         
-        <footer>copyright</footer>
 
         <script type="text/javascript">
             
