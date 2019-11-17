@@ -95,3 +95,14 @@ function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNu
 //     alert(msg);
 // }
 
+document.getElementById("btnGen").addEventListener("click", btnGen_Click);
+
+function btnGen_Click() {
+    alert("Clicked!");
+    // alert(document.getElementById("chkLower").checked);
+    // document.getElementById("chkLower").checked=true;
+    // alert(document.getElementById("chkLower").checked);
+    // alert(document.getElementById("txtPassword").value);
+    // document.getElementById("txtPassword").value = "Hello World";
+    // alert(document.getElementById("txtPassword").value);
+}
