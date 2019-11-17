@@ -35,17 +35,18 @@ function GetRandomInt(iMin, iMax){
 }
 
 // Generates a password per input parameters
-function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNumber,bIncludeSpecial){
+function GeneratePassword(passGeneratorSettings){
+            
     var sPswd="";
     var charType =[];
     //"Lower","Upper","Number","Special"
-    if (bIncludeLower)  {charType.push("Lower");}
-    if (bIncludeUpper)  {charType.push("Upper");}
-    if (bIncludeNumber)  {charType.push("Number");}
-    if (bIncludeSpecial)  {charType.push("Special");}
+    if (passGeneratorSettings.bIncludeLower)  {charType.push("Lower");}
+    if (passGeneratorSettings.bIncludeUpper)  {charType.push("Upper");}
+    if (passGeneratorSettings.bIncludeNumber)  {charType.push("Number");}
+    if (passGeneratorSettings.bIncludeSpecial)  {charType.push("Special");}
     if (charType.length>0){
         var specialChars=["~","`","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","[","}","]","|",":",";","<",",",">",".","?","/","\'","\"","\\"];
-        for (var i=0;i<iPasswordLength;i++){
+        for (var i=0;i<passGeneratorSettings.iPasswordLength;i++){
             var iType= GetRandomInt(0,charType.length-1);
             var sType=charType[iType];
             console.log("Selected type char #" + i + ": " + sType);
@@ -82,7 +83,7 @@ function btnGen_Click() {
     var passGeneratorSettings=readPassGenSettings();
     var pswd="";
     if (isValid(passGeneratorSettings)){
-        pswd= GeneratePassword(passGeneratorSettings.iPasswordLength,passGeneratorSettings.bIncludeLower,passGeneratorSettings.bIncludeUpper,passGeneratorSettings.bIncludeNumber,passGeneratorSettings.bIncludeSpecial);
+        pswd= GeneratePassword(passGeneratorSettings);
         document.getElementById("txtPassword").value=pswd;
     }
     else{
