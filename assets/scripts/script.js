@@ -78,11 +78,6 @@ function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNu
             
 }
 
-
-
-
-document.getElementById("btnGen").addEventListener("click", btnGen_Click);
-
 function btnGen_Click() {
     var passGeneratorSettings=readPassGenSettings();
     var pswd="";
@@ -98,3 +93,10 @@ function btnGen_Click() {
     }
     document.getElementById("txtPassword").value=pswd;
 }
+
+function btnCopy_Click(){
+    alert("Under construction!");
+}
+
+document.getElementById("btnGen").addEventListener("click", btnGen_Click);
+document.getElementById("btnCopy").addEventListener("click", btnCopy_Click);
