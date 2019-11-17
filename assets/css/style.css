@@ -4,6 +4,7 @@
 }
 .container,footer{
   background-color: teal;
+  color: white;
 }
 footer,header{
   text-align: center;
