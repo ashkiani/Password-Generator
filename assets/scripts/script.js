@@ -19,7 +19,7 @@ function readPassGenSettings(){
 //assignment/homework requirement is that at least one of the checkboxes should be selected. but no restriction on length
 function isValid(passGeneratorSettings){
     var bResult=false;
-    if (passGeneratorSettings.IncludeLower || passGeneratorSettings.bIncludeUpper || passGeneratorSettings.bIncludeNumber || passGeneratorSettings.bIncludeSpecial){
+    if (passGeneratorSettings.bIncludeLower || passGeneratorSettings.bIncludeUpper || passGeneratorSettings.bIncludeNumber || passGeneratorSettings.bIncludeSpecial){
         bResult=true;
     }
     return bResult;
@@ -84,17 +84,17 @@ function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNu
 document.getElementById("btnGen").addEventListener("click", btnGen_Click);
 
 function btnGen_Click() {
-    // alert("Clicked!");
-
     var passGeneratorSettings=readPassGenSettings();
-    
-    // if (isValid(passGeneratorSettings)){
-    // alert( GeneratePassword(passGeneratorSettings.PasswordLength,passGeneratorSettings.IncludeLower,passGeneratorSettings.bIncludeUpper,passGeneratorSettings.bIncludeNumber,passGeneratorSettings.bIncludeSpecial));
-    // }
-    // else{
-    //     var msg="Invalid input! At least one of the checkboxes should be selected."
-    //     console.log(msg);
-    //     alert(msg);
-    // }
+    var pswd="";
+    if (isValid(passGeneratorSettings)){
+        pswd= GeneratePassword(passGeneratorSettings.iPasswordLength,passGeneratorSettings.bIncludeLower,passGeneratorSettings.bIncludeUpper,passGeneratorSettings.bIncludeNumber,passGeneratorSettings.bIncludeSpecial);
+        document.getElementById("txtPassword").value=pswd;
+    }
+    else{
 
+        var msg="Invalid input! At least one of the checkboxes should be selected."
+        console.log(msg);
+        alert(msg);
+    }
+    document.getElementById("txtPassword").value=pswd;
 }
