@@ -1,28 +1,22 @@
-            // Some test calls to generate a few passwords. I'll comment this out once I complete the html and css.
-            // alert(GeneratePassword(8,true,false,false,false));
-            // alert(GeneratePassword(8,true,true,false,false));
-            // alert(GeneratePassword(8,true,true,true,false));
-            // alert(GeneratePassword(8,true,true,true,true));
-            // alert(GeneratePassword(8,false,false,false,false));
-            
-
-
-
+// Reads the settings from the page (Password length, include numbers, etc...)
 function readPassGenSettings(){
 
     var passGeneratorSettings ={
-        "PasswordLength":8,
-        "IncludeLower":true,
-        "bIncludeUpper":true,
-        "bIncludeNumber":true,
-        "bIncludeSpecial":true
+        "iPasswordLength":document.getElementById("example-number-input").value,
+        "bIncludeLower":document.getElementById("chkLower").checked,
+        "bIncludeUpper":document.getElementById("chkUpper").checked,
+        "bIncludeNumber":document.getElementById("chkNumbers").checked,
+        "bIncludeSpecial":document.getElementById("chkSpecial").checked
     }
-
+    console.log("settings: -Length " + passGeneratorSettings.iPasswordLength + " -Lower " + passGeneratorSettings.bIncludeLower
+    + " -Upper " + passGeneratorSettings.bIncludeUpper+ " -Numbers " + passGeneratorSettings.bIncludeNumber+ " -Special " 
+    + passGeneratorSettings.bIncludeSpecial);
+    
     return passGeneratorSettings;
 
 }
 
-//assignment requirement is that at least one of the checkboxes should be selected.
+//assignment/homework requirement is that at least one of the checkboxes should be selected. but no restriction on length
 function isValid(passGeneratorSettings){
     var bResult=false;
     if (passGeneratorSettings.IncludeLower || passGeneratorSettings.bIncludeUpper || passGeneratorSettings.bIncludeNumber || passGeneratorSettings.bIncludeSpecial){
@@ -85,24 +79,22 @@ function GeneratePassword(iPasswordLength,bIncludeLower,bIncludeUpper,bIncludeNu
 }
 
 
-// var passGeneratorSettings=readPassGenSettings();
-// if (isValid(passGeneratorSettings)){
-//    alert( GeneratePassword(passGeneratorSettings.PasswordLength,passGeneratorSettings.IncludeLower,passGeneratorSettings.bIncludeUpper,passGeneratorSettings.bIncludeNumber,passGeneratorSettings.bIncludeSpecial));
-// }
-// else{
-//     var msg="Invalid input! At least one of the checkboxes should be selected."
-//     console.log(msg);
-//     alert(msg);
-// }
+
 
 document.getElementById("btnGen").addEventListener("click", btnGen_Click);
 
 function btnGen_Click() {
-    alert("Clicked!");
-    // alert(document.getElementById("chkLower").checked);
-    // document.getElementById("chkLower").checked=true;
-    // alert(document.getElementById("chkLower").checked);
-    // alert(document.getElementById("txtPassword").value);
-    // document.getElementById("txtPassword").value = "Hello World";
-    // alert(document.getElementById("txtPassword").value);
+    // alert("Clicked!");
+
+    var passGeneratorSettings=readPassGenSettings();
+    
+    // if (isValid(passGeneratorSettings)){
+    // alert( GeneratePassword(passGeneratorSettings.PasswordLength,passGeneratorSettings.IncludeLower,passGeneratorSettings.bIncludeUpper,passGeneratorSettings.bIncludeNumber,passGeneratorSettings.bIncludeSpecial));
+    // }
+    // else{
+    //     var msg="Invalid input! At least one of the checkboxes should be selected."
+    //     console.log(msg);
+    //     alert(msg);
+    // }
+
 }
