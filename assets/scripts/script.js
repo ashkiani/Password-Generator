@@ -16,12 +16,35 @@ function readPassGenSettings(){
 
 }
 
-//assignment/homework requirement is that at least one of the checkboxes should be selected. but no restriction on length
+//assignment/homework requirement is that at least one of the checkboxes should be selected. but no restriction on length.
+// I decided to add a restriction on length: input should be between 1 and 850. 
+// Even though I tested it up to 85000 but I thought allowing such a large number for password length doesn't make sense.
 function isValid(passGeneratorSettings){
     var bResult=false;
+    var msg="";
+    
     if (passGeneratorSettings.bIncludeLower || passGeneratorSettings.bIncludeUpper || passGeneratorSettings.bIncludeNumber || passGeneratorSettings.bIncludeSpecial){
-        bResult=true;
+        if (passGeneratorSettings.iPasswordLength!=0){
+            if (passGeneratorSettings.iPasswordLength<=850){
+                bResult=true;
+            }
+            else{
+                msg="The password maximum length is 850.";        
+            }
+        }
+        else{
+            msg="The password length should be greater than 0.";    
+        }
     }
+    else{
+        msg="At least one of the checkboxes should be selected.";
+    }
+    if (msg!=""){
+        msg = "Invalid input! " + msg;
+        console.log(msg);
+        alert(msg);
+    }
+    
     return bResult;
 }
 
@@ -86,13 +109,7 @@ function btnGen_Click() {
         pswd= GeneratePassword(passGeneratorSettings);
         document.getElementById("txtPassword").value=pswd;
     }
-    else{
-
-        var msg="Invalid input! At least one of the checkboxes should be selected."
-        console.log(msg);
-        alert(msg);
-    }
-    document.getElementById("txtPassword").value=pswd;
+    //document.getElementById("txtPassword").value=pswd;
 }
 
 // handles the Click event for the Copy button
